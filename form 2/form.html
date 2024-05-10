@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 2</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="https://kit.fontawesome.com/69fc68b146.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="hero">
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6c6ff0aa-cf48-4d1f-8ac9-ccdba4428857">
+        <div class="row">
+            <div class="input-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name"><i class="fas fa-user"></i> Nombre</label>
+               </div>
+                
+               <div class="input-group">
+                <input type="text" id="age" name="age" required>
+                <label for="name"><i class="fa-solid fa-cake-candles"></i> Edad</label>
+               </div>
+
+        </div>
+        
+       
+
+       <div class="input-group">
+        <input type="text" id="link" name="link" required>
+        <label for="name"><i class="fa-solid fa-link"></i> Enlace página</label>
+       </div>
+
+       <div class="input-group">
+        <textarea id="message" rows="8" name="comment" required></textarea>
+        <label for="message"><i class="fa-solid fa-comment"></i> Tu experiencia</label>
+       </div>
+
+       <button type="submit">Enviar</button>
+
+
+
+    </form>    
+
+    </div>
+     
+</body>
+</html>
