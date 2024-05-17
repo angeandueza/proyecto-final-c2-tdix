@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y Casillas</title>
+    <link rel="stylesheet" href="fortest.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="half" id="left-half">
+            <h2>Cuenta tu experiencia</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="6c6ff0aa-cf48-4d1f-8ac9-ccdba4428857">
+                <div class="input-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name"><i class="fas fa-user"></i> Nombre</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="age" name="age" required>
+                    <label for="age"><i class="fa-solid fa-cake-candles"></i> Edad</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="link" name="link" required>
+                    <label for="link"><i class="fa-solid fa-link"></i> Enlace página</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="8" name="comment" required></textarea>
+                    <label for="message"><i class="fa-solid fa-comment"></i> Tu experiencia</label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="half" id="right-half">
+            <h2>Testimonios</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Martina González</h3>
+                    <a>23 años</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam minima quas molestiae eligen</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Camila Rojas</h3>
+                    <a>27 años</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam minima quas molestiae eligen</p>
+                </div>
+                <div class="grid-item">
+                    <h3>José Fernández</h3>
+                    <a>54 años</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam minima quas molestiae eligen</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Carla Jimenez</h3>
+                    <a>32 años</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam minima quas molestiae eligen</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Jaime Gutierrez</h3>
+                    <a>40 años</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam minima quas molestiae eligen</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Camilo Melo</h3>
+                    <a>29 años</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam minima quas molestiae eligen</p>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://www.vantajs.com/dist/vanta.dots.min.js"></script>
+    
+        
+        <script>
+
+    let vantaEffect = null; 
+
+    function initVanta() {
+        vantaEffect = VANTA.DOTS({
+            el: "body",
+            color: 0x6f7188,
+            color2: 0x212940,
+            backgroundColor: 0x03080C
+        });
+    }
+
+    initVanta();
+
+    window.addEventListener('resize', () => {
+        if (vantaEffect) {
+            vantaEffect.resize(); 
+        }
+    });
+</script>
+    </script>
+</body>
+</html>
+
