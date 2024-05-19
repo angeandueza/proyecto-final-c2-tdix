@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuéntanos</title>
+    <link rel="stylesheet" href="fortest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.23/vanta.net.min.js"></script>
+</head>
+<body>
+    <div id="vanta-bg"></div>
+    <div class="container">
+        <div class="left-half">
+            <h2>¡DÉJANOS TU EXPERIENCIA!</h2>
+            <p>Queremos escuchar tu historia. Escribe y envía tu mala experiencia vivida por distintos patrones oscuros descritos en Traslaweb y cuéntanos si te has encontrado con otros no mencionados.</p> 
+            <p>En el espacio de Ojopiojo, podrás descubrir varias experiencias con diferentes marcas.</p> 
+            <p>¡Gracias por compartir y ayudarnos a mejorar la transparencia en la web!</p>
+        </div>
+        <div class="right-half">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="6c6ff0aa-cf48-4d1f-8ac9-ccdba4428857">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name"><i class="fas fa-user"></i> Nombre</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="age" name="age" required>
+                        <label for="age"> Edad</label>
+                    </div>   
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="link" name="link" required>
+                    <label for="link"> Enlace página</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="8" name="comment" required></textarea>
+                    <label for="message"> Tu experiencia</label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function initializeVanta() {
+            window.vantaEffect = VANTA.NET({
+                el: "#vanta-bg",
+                color: 0x212940,
+                backgroundColor: 0x03080c,
+                points: 10,
+                spacing: 15,
+                maxDistance: 20,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                minHeight: window.innerHeight,
+                minWidth: window.innerWidth,
+                mouseControls: false,
+                touchControls: false,
+                gyroControls: false
+            });
+        }
+
+        function resizeVanta() {
+            if (window.vantaEffect) {
+                window.vantaEffect.destroy();
+            }
+            initializeVanta();
+        }
+
+        initializeVanta();
+
+        window.addEventListener('resize', resizeVanta);
+
+        function handleMediaQueryChange(mediaQueryList) {
+            if (mediaQueryList.matches) {
+                resizeVanta();
+            }
+        }
+
+        var mediaQueryList = window.matchMedia("(max-width: 767px)");
+        mediaQueryList.addListener(handleMediaQueryChange);
+        handleMediaQueryChange(mediaQueryList);
+    </script>
+</body>
+</html>
